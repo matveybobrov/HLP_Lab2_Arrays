@@ -97,5 +97,10 @@ public class Task3
 
     public static void Main()
     {
+        int[] arr1 = GenerateArray();
+        PrintArray(arr1);
+        int[] arr2 = GenerateArray();
+        PrintArray(arr2);
+        PrintArray(FindMatchingValues(arr1, arr2));
     }
 }

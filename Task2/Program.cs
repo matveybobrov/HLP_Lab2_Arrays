@@ -18,13 +18,17 @@ namespace Task2
                 array[i] = rnd.Next(0, 10);
             }
             Console.WriteLine("[{0}]", string.Join(", ", array));
-            for (int i = 0; i < size / 2 + size % 2; i++)
+            int middle = array[size / 2];
+            for (int i = 0; i < size / 2; i++)
             {
-                int tmp = array[size/2 + i];
-                array[size/2 + i] = array[i];
-                array[i] = tmp;
+                int tmp = array[i];
+                array[i] = array[size / 2 + i + size % 2];
+                array[size / 2 + i] = tmp;
             }
-
+            if (size % 2 != 0)
+            {
+                array[size - 1] = middle;
+            }
             Console.WriteLine("[{0}]", string.Join(", ", array));
         }
     }
